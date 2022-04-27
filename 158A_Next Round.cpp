@@ -2,25 +2,18 @@
 using namespace std;
 
 int main(){
-    int s, p; // array size and position
+    int s, k; // array size and position
+    cin >> s >> k;
     int arr[s];
-    cin >> s >> p;
     for(int i = 0; i<s; i++){
         cin >> arr[i];
     }
-
-    for(int i = 0; i<s; i++){
-        //cout << arr[i] << " ";
-        if(arr[i]>0){
-            if(arr[p] >= arr[p+1]){
-                cout << arr[p+1]+1 << endl;
-                break;
-            }
-        }else{
-            cout << 0 << endl;
-            break;
+    int num =0;
+    for(int i = 0; i<=s; i++){
+        if( arr[i] >= arr[k-1] && arr[i]!=0){
+            num += 1;
         }
     }
-
+    cout << num;
     return 0;
 }
