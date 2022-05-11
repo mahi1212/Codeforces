@@ -4,7 +4,6 @@ using namespace std;
 int main(){
     int  n;
     cin >> n;
-    string first = "I hate", second = "I love";
     string str[] = {"I hate", "I love"};
     string s;
     if(n%2==0){
