@@ -7,7 +7,7 @@ int main(){
     while(tc--){
         int a,b;
         cin >> a >> b;
-        // a = 10, b = 4 ans = 2
+
         int div, num;
         if(a%b == 0){
             cout << 0 << endl;
