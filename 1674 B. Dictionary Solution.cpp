@@ -11,6 +11,8 @@ int main(){
         int y = (s[1]-'a');
         if(x>y) cout << x*25+y+1;
         else cout << x*25+y;
+
+        cout << endl;
     }
 
     return 0;
