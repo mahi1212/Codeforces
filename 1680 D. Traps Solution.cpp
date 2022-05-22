@@ -1,44 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+#define   ll          long long
+#define   endl        "\n"
+
 int main()
 {
-    int n, k;
-    cin >> n >> k;
-    int arr[n];
-    for(int i=0; i<n; i++)
+    int t;
+    cin >> t;
+    while(t--)
     {
-        cin >> arr[i];
-    }
+        ll n, k;
+        cin>>n>>k;
+        ll a[n];
+        ll ans=-(ll)k*(k-1)/2;
 
-    for(int i=0; i<n; i++)
-    {
-        for(int j=i+1; j<n; j++)
+        for(int i=0; i<n; i++)
         {
-            if(arr[i]<arr[j])
-            {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
+            cin>>a[i];
+            ans+=a[i];
+            a[i]-= n-i-1;
         }
-    }
+        sort(a, a+n, greater<ll>());
 
-    int sum = 0;
-    vector<int> ans;
-    int tr = arr[0];
-    for(int i=0; i<n; i++)
-    {
-        cout << arr[i] << " ";
-        if(arr[i]!=tr)
+        for(int i=0; i<k; i++)
         {
-            sum += arr[i];
+            ans-=a[i];
         }
-        tr = arr[0]++;
+        cout<<ans<<endl;
+
     }
-    cout << sum ;
-
-
 
     return 0;
 }

@@ -41,7 +41,6 @@ int main()
         else{
             ll f = *(s.begin()) - 1;
             ll l = *(s.rbegin()) - 1;
-        cout <<"F L : " << f << " " << l << endl;
 
             bool no = false;
             for(i = 0; i < n; i++)
