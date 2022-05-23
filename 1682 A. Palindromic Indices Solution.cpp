@@ -17,31 +17,18 @@ int main()
     cin >> t;
     while(t--)
     {
-        ll n;
-        cin >> n;
-        string s;
-        cin >> s;
+        ll n; cin >> n;
+        string s; cin >> s;
 
-        int l = 0;
-        int h = n-1;
         int c = 0;
-        if(n==2){
-            if(s[0] == s[1]){
-                c = 2;
+        int mid = n/2;
+        if(n&1) c++;
+
+        for(int i= n/2-1; i>=0; i--){
+            if(s[i] == s[mid]){
+                c += 2;
             }else{
-                c = 0;
-            }
-        }
-        if(n>2)
-        {
-
-            c-=1;
-            while(h > l){
-
-                if(s[l++] == s[h--])
-                {
-                    c++;
-                }
+                break;
             }
         }
 
