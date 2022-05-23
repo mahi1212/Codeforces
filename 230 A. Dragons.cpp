@@ -19,10 +19,15 @@ int main(){
     }
 
     sort(v.begin(), v.end());
-    for(int i=0; i<n; i++){
-        cout << v[i].first << " " << v[i].second << endl;
+    for (int i = 0; i < n; i++) {
+        if(s <= v[i].first){
+            no;
+            return 0;
+        } else {
+            s += v[i].second;
+        }
     }
-
+    yes;
 
 }
 
