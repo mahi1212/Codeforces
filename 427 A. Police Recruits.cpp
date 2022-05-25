@@ -13,26 +13,24 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     //bismillah
-    int n, t; // t = time
-    cin >> n >> t;
-    int count = 0;
-    int sum =0;
-    for(int i=1; i<=n; i++){
-        int a = 5*i;
-        sum += a;
-        if(sum + t + 1200 <= 1440){
-            count++;
+    int n;
+    cin >> n;
+    int police = 0, crime = 0;
+    for(int i=0; i<n; i++){
+        int x;
+        cin >> x;
+        if(x > 0){
+            police += x;
+        }else{
+            if(police < 1){
+                ++crime;
+            }else{
+                --police;
+            }
         }
     }
 
-    if(sum + t + 1200 > 1440){
-        cout << count;
-    }else{
-        cout << n;
-    }
-
-
-
+    cout << crime;
 
     oky_bye;
 }

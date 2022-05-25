@@ -13,27 +13,11 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     //bismillah
-    int n, t; // t = time
-    cin >> n >> t;
-    int count = 0;
-    int sum =0;
-    for(int i=1; i<=n; i++){
-        int a = 5*i;
-        sum += a;
-        if(sum + t + 1200 <= 1440){
-            count++;
-        }
-    }
-
-    if(sum + t + 1200 > 1440){
-        cout << count;
-    }else{
-        cout << n;
-    }
-
-
-
+    int r, b;
+    cin >> r >> b;
+    int diff = min(r, b);
+    int m = max(r, b);
+    cout << diff << " " << (m-diff)/2;
 
     oky_bye;
 }
-
