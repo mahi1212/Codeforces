@@ -13,22 +13,21 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     //bismillah
-    int t;
-    cin >> t;
-    while(t--){
-        int a, b;
-        cin >> a >> b;
-        if(a==b){
-            cout << 0 << endl;
-        }else{
-            if(abs(a-b)%10==0)
-                cout<<abs(a-b)/10<<endl;
-            else
-                cout<<(abs(a-b)/10)+1<<endl;
-        }
-
+    ll n;
+    cin >> n;
+    int a[n];
+    for(int i=0; i<n; i++){
+        cin >> a[i];
     }
-
+    sa(a, n);
+    int max = a[n-1];
+    int count = 0;
+    for(int i=0; i<n; i++){
+        if(a[i] <= max){
+            ll diff = max-a[i];
+            count += diff;
+        }
+    }
+    cout << count << endl;
     oky_bye;
 }
-

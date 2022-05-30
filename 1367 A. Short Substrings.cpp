@@ -16,17 +16,19 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int a, b;
-        cin >> a >> b;
-        if(a==b){
-            cout << 0 << endl;
+        string s, s2;
+        cin >> s;
+        if(s.length()<3){
+            cout << s << endl;
         }else{
-            if(abs(a-b)%10==0)
-                cout<<abs(a-b)/10<<endl;
-            else
-                cout<<(abs(a-b)/10)+1<<endl;
+            for(int i=0; i<s.length(); i+=2){
+                //cout << s[i];
+                s2 += s[i];
+            }
+            s2+= s[s.length()-1]+s[s.length()];
+            cout << s2;
+            newline;
         }
-
     }
 
     oky_bye;

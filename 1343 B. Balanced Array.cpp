@@ -16,15 +16,24 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int a, b;
-        cin >> a >> b;
-        if(a==b){
-            cout << 0 << endl;
+        int n;
+        cin >> n;
+        int evenSum = 0;
+        int oddSum = 0;
+
+        if(n%4==2){
+            no;
         }else{
-            if(abs(a-b)%10==0)
-                cout<<abs(a-b)/10<<endl;
-            else
-                cout<<(abs(a-b)/10)+1<<endl;
+            yes;
+            for(int i=2; i<= n; i+=2 ){
+                cout << i << " ";
+                evenSum += i;
+            }
+            for(int i=1; i<n-2; i+=2){
+                cout<<i<<" ";
+                oddSum += i;
+            }
+            cout << evenSum - oddSum << endl;
         }
 
     }

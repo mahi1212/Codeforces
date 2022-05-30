@@ -12,23 +12,16 @@ using namespace std;
 
 int main(){
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-    //bismillah
-    int t;
-    cin >> t;
-    while(t--){
-        int a, b;
-        cin >> a >> b;
-        if(a==b){
-            cout << 0 << endl;
-        }else{
-            if(abs(a-b)%10==0)
-                cout<<abs(a-b)/10<<endl;
-            else
-                cout<<(abs(a-b)/10)+1<<endl;
+    int n, k, c = 0;
+    cin >> n >> k;
+    for(int i=0; i<n; i++){
+        int p;
+        cin >> p;
+        if(p+k <= 5){
+            c++;
         }
-
     }
-
+    cout << c/3;
     oky_bye;
 }
 
