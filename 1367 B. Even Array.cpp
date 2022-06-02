@@ -19,17 +19,34 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        int a[n];
-        for(int i=0; i<n; i++){
+        int a[n+1];
+
+        ll given[n+1] = {0}; // i%2
+        ll req[n+1] = {0}; // a[i]%2
+
+        ll change_1_to_0 = 0;
+        ll change_0_to_1 = 0;
+
+        for(ll i=0; i<n; i++){
             cin >> a[i];
+
+            given[i] = i%2;
+            req[i] = a[i]%2;
+            if(given[i]!=req[i]){
+                if(given[i]==1){
+                    change_1_to_0++;
+                }else{
+                    change_0_to_1++;
+                }
+            }
+
         }
-        int k = n - 2; // number of middle digits
-		int ans = a[n - 1] - a[0] - 2 - 1; //Compare the distance between the two sides and the number of middle digits
-		cout << "K : " << k << " Ans : " << ans << endl;
-		if (ans <= k)
-			yes;
-		else
-			no;
+        if(change_1_to_0 != change_0_to_1){
+            cout << -1 << endl;
+        }else{
+            cout << change_1_to_0 << endl;
+        }
+
     }
 
     oky_bye;

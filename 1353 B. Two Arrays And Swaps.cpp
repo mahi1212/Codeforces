@@ -17,28 +17,29 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        for(int i=0; i<n; i++){
-            cin >> a[i];
-        }
+        int n, k;
+        cin >> n >> k;
+        vector<int> a(n);
+        vector<int> b(n);
 
-        int c = 0, f = a[0], s, tiny, big;
-        for(int i=0; i<n; i++){
-            if(f != a[i]){
-                s = a[i];
-                c++;
-                tiny = i;
-            }else{
-                big = i;
-            }
+        for(int i=0; i<n; i++)
+            cin >> a[i];
+        for(int i=0; i<n; i++)
+            cin >> b[i];
+
+        sv(a);
+        sort(b.begin(), b.end(), greater<>());
+
+        for(int i=0; i<k; i++){
+            if(a[i]<b[i]){
+                swap(a[i], b[i]);
+            }else break;
         }
-        if(c==1){
-            cout << ++tiny << endl;
-        }else{
-            cout << ++big << endl;
+        ll sum = 0;
+        for (int i=0; i<n; i++){
+            sum += (ll) a[i];
         }
+        cout << sum << endl;
     }
 
     oky_bye;
