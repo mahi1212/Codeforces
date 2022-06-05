@@ -14,27 +14,18 @@ using namespace std;
 int main(){
     Bismillah();
 
-    ll t;
-    cin >> t;
-    while(t--){
-        ll n, m;
-        cin >> n >> m;
-        ll a[n];
-        for(ll i=0; i<n; i++){
-            cin >> a[i];
-        }
-        sa(a, n);
+    int a, b, d, m;
+    cin >> a >> b;
+    int h = a;
 
-        ll count = n; //for initial setup
-        for(int i=1; i<n; i++){
-            count+=a[i];
-        }
-
-        count+= a[n-1];
-        if(count <= m) yes;
-        else no;
-
+    while(a >= b)
+    {
+        d = a / b;
+        h += d;
+        m = a % b;
+        a = d + m;
     }
+    cout << h << endl;
 
     oky_bye;
 }

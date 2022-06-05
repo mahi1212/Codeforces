@@ -13,29 +13,13 @@ using namespace std;
 
 int main(){
     Bismillah();
-
-    ll t;
+    int t;
     cin >> t;
     while(t--){
-        ll n, m;
-        cin >> n >> m;
-        ll a[n];
-        for(ll i=0; i<n; i++){
-            cin >> a[i];
-        }
-        sa(a, n);
-
-        ll count = n; //for initial setup
-        for(int i=1; i<n; i++){
-            count+=a[i];
-        }
-
-        count+= a[n-1];
-        if(count <= m) yes;
-        else no;
+        int x;
+        cin >> x;
 
     }
-
     oky_bye;
 }
 

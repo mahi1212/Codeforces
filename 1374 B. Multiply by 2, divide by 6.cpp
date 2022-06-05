@@ -14,25 +14,25 @@ using namespace std;
 int main(){
     Bismillah();
 
-    ll t;
+    int t;
     cin >> t;
     while(t--){
-        ll n, m;
-        cin >> n >> m;
-        ll a[n];
-        for(ll i=0; i<n; i++){
-            cin >> a[i];
+        int n;
+        cin >> n;
+        int c = 0;
+        while(n%6 ==0){
+            n = n/6;
+            c++;
         }
-        sa(a, n);
-
-        ll count = n; //for initial setup
-        for(int i=1; i<n; i++){
-            count+=a[i];
+        while(n%3 == 0){
+            n = n/3;
+            c += 2;
         }
-
-        count+= a[n-1];
-        if(count <= m) yes;
-        else no;
+        if(n==1){
+            cout << c << endl;
+        }else{
+            cout << -1 << endl;
+        }
 
     }
 
