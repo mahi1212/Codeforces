@@ -13,28 +13,20 @@ using namespace std;
 
 int main(){
     Bismillah();
+
     int t;
     cin >> t;
     while(t--){
-        int x;
-        cin >> x;
-        int c;
-        //cout << c << " " << d << endl;
-        for(int i=1; i<1000; i++){
-            if((x&i) > 0 && (x^i)>0){
-                c = min((x&i),(x^i));
-                break;
-            }
-            if(((x&i) > 0 && (x&i) < 100) && ((x^i) > 0 && (x^i) < 100)){
-                c = min((x&i),(x^i));
-                break;
-            }else{
-                c = (x&i)+ (x^i);
-                break;
-            }
-        }
-        cout << c << endl;
+        int n;
+        cin >> n;
+        ll mod = n%2020;
+        ll div = n/2020;
+
+        if(mod<=div) yes;
+        else no;
+
     }
+
     oky_bye;
 }
 
