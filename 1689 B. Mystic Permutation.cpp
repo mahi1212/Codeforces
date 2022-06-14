@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define ll              long long
+#define ll              long long int
 #define pb              push_back
 #define yes             cout <<"YES" <<endl
 #define no              cout << "NO" <<endl
@@ -11,57 +11,57 @@ using namespace std;
 #define Bismillah()     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
 #define oky_bye         return 0
 
-int main(){
+int main()
+{
     Bismillah();
 
     int t;
     cin >> t;
-    while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        vector<int> vec;
-        for(int i=0; i<n; i++){
-            cin >> a[i];
+    while(t--)
+    {
+        ll n;
+        cin>>n;
+        ll a[n+1], i;
+        for(i = 1; i <= n; i++) cin >> a[i];
+
+        set< ll > s;
+        vector < ll > v;
+
+        if(n == 1)
+        {
+            cout << "-1\n";
+            oky_bye;
         }
-        if(n==1) cout << "-1" << endl;
-        if(n>1){
-            for(int i=0; i<n; i++){
-                if(a[0]>a[i]){
-                    int d = i;
-                    for(int j=i; j<n; j++){
-                        int m = a[j];
-                        vec.pb(m);
-                    }
-                    for(int k=0; k<d; k++){
-                        int p = a[k];
-                        vec.pb(p);
-                    }
-                    for(int i=0; i<n; i++){
-                        cout << vec[i] << " ";
-                    }
-                }if(a[0]<a[i]){
-                    int d = i;
-                    for(int j=i; j<n; j++){
-                        int m = a[j];
-                        vec.pb(m);
-                    }
-                    for(int k=0; k<d; k++){
-                        int p = a[k];
-                        vec.pb(p);
-                    }
-                    for(int i=0; i<n; i++){
-                        cout << vec[i] << " ";
-                    }
-                }
+
+        for(i = 1; i <= n; i++)
+        {
+            if(i == a[i])
+            {
+                s.insert(i);
+                s.insert(i+1);
+                v.push_back(i+1);
+                v.push_back(i);
+                i++;
             }
-
+            else
+            {
+                s.insert(i);
+                v.push_back(i);
+            }
         }
 
-
+        if(s.size() == n)
+        {
+            for(auto u : v) cout << u << " ";
+        }
+        else
+        {
+            for(auto u = v.begin(); u != v.end() -3; u++) cout << *u << " ";
+            cout << *(v.rbegin()) << " " << *(v.rbegin()+2);
+        }
+        cout << endl;
 
     }
 
     oky_bye;
 }
-
