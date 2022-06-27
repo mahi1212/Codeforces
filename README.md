@@ -5,5 +5,5 @@
   <li>All the code here will be named as their round + name</li>
   <li> Eg: 758 A. Holiday Of Equality </li>
 </ul>
-
-&copy; Mahinur Rahman
+<b>CodeForces : mahinur05 </b>
+&copy; Mahinur Rahman 
