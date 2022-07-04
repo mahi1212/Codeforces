@@ -7,9 +7,6 @@ using namespace std;
 #define no                  cout << "NO" <<endl
 #define newline             cout <<endl
 #define sa(a,n)             sort(a,a+n)
-#define spref(pref)               sort(pref.begin(),pref.end())
-#define sumprefec(pref)           accumulate(pref.begin(), pref.end(), 0)
-#define fillprefec(pref,prefalue)    fill(pref.begin(), pref.end(), prefalue)
 #define Bismillah()         ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
 #define oky_bye             return 0
 
@@ -28,7 +25,6 @@ int binarySearch (int k){
         else
             low = mid+1;
     }
-
     return high;
 }
 
