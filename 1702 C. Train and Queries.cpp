@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -19,15 +20,34 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n;
-        cin >> n;
-        cout << 2 << endl;
-        for(int i=1; n>=i; i+=2){
-            for(int j=i; n>=j; j*=2){
-                cout << j << " ";
+        int n, q;
+        cin >> n >> q;
+        vector<int> vec(n);
+        for(int i=0; i<n; i++){
+            cin >> vec[i];
+        }
+        map<int, vector<int>> indexs;
+        for(int i=0; i<n; i++){
+            indexs[vec[i]].pb(i);
+        }
+
+        while(q--){
+            int a, b;
+            cin >> a >> b;
+            if(indexs[a].empty() || indexs[b].empty()){
+                no;
+                continue;
+            }
+            if(a==b){
+                yes;
+                continue;
+            }
+            if(indexs[a].front() < indexs[b].back()){
+                yes;
+            }else{
+                no;
             }
         }
-        newline;
     }
 
     oky_bye;

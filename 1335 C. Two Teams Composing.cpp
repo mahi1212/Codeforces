@@ -21,13 +21,22 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        cout << 2 << endl;
-        for(int i=1; n>=i; i+=2){
-            for(int j=i; n>=j; j*=2){
-                cout << j << " ";
+        int a[n+5];
+        map<int, int>mp;
+        int freq = 0;
+        for(int i=0; i<n; i++){
+            cin >> a[i];
+            mp[a[i]]++;
+            if(mp[a[i]]>freq){
+                freq = mp[a[i]];
             }
         }
-        newline;
+        int s = mp.size();
+        if(freq==s){
+            cout << freq - 1 << endl;
+        }else{
+            cout << min(freq, s) << endl;
+        }
     }
 
     oky_bye;

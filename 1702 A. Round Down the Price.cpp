@@ -21,13 +21,22 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        cout << 2 << endl;
-        for(int i=1; n>=i; i+=2){
-            for(int j=i; n>=j; j*=2){
-                cout << j << " ";
-            }
+        int initial = n;
+        int cnt = 0;
+        while(n>0){
+            n = n /10;
+            cnt++;
         }
-        newline;
+        string s = "1";
+        if(initial < 10){
+            cout << initial-1 << endl;
+        }else{
+            for(int i=0; i<cnt-1; i++){
+                s+= "0";
+            }
+            int sub = stoi(s);
+            cout << initial-sub << endl;
+        }
     }
 
     oky_bye;

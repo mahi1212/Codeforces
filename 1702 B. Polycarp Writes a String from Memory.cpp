@@ -19,15 +19,28 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n;
-        cin >> n;
-        cout << 2 << endl;
-        for(int i=1; n>=i; i+=2){
-            for(int j=i; n>=j; j*=2){
-                cout << j << " ";
+        string s;
+        cin >> s;
+
+        int n = s.size();
+        int res = 0;
+        set<char> my_set;
+
+        for(int i=0; i<n; i++){
+            my_set.insert(s[i]);
+            if(my_set.size()>3){
+                res++;
+                my_set.clear();
+                i--;
             }
         }
-        newline;
+
+        if(my_set.size()>=1){
+            res++;
+        }else{
+            res--;
+        }
+        cout << res << endl;
     }
 
     oky_bye;

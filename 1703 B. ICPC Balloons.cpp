@@ -21,13 +21,16 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        cout << 2 << endl;
-        for(int i=1; n>=i; i+=2){
-            for(int j=i; n>=j; j*=2){
-                cout << j << " ";
-            }
+        string s;
+        cin >> s;
+
+        set<char> se;
+        for(int i=0; i<s.size();i++){
+            se.insert(s[i]);
         }
-        newline;
+        int rem = n - se.size();
+        cout << rem*1 + se.size()*2 << endl;
+
     }
 
     oky_bye;

@@ -19,15 +19,14 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n;
-        cin >> n;
-        cout << 2 << endl;
-        for(int i=1; n>=i; i+=2){
-            for(int j=i; n>=j; j*=2){
-                cout << j << " ";
-            }
+        string s;
+        cin >> s;
+        transform(s.begin(), s.end(), s.begin(), ::tolower);
+        if(s=="yes"){
+            yes;
+        }else{
+            no;
         }
-        newline;
     }
 
     oky_bye;
