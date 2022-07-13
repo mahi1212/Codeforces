@@ -28,14 +28,13 @@ int main(){
             string s;
             cin >> q >> s;
 
-            int cntUp =0;
-            int cntDown =0;
             for(int j=0; j<q; j++){
                 if(s[j]=='D'){
-                    a[i] = (a[i]+1)%10;
+                    a[i]++;
+                    if(a[i]==10) a[i] = 0;
                 }else{
-                    if(a[i]==0) a[i]=9;
-                    else a[i] = a[i]-1;
+                    a[i]--;
+                    if(a[i]==-1) a[i] = 9;
                 }
             }
         }
