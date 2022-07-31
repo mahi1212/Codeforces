@@ -19,21 +19,25 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        ll a, b, x, y, n;
-        cin >> a >> b >> x >> y >> n;
-        ll copyA = a;
-        ll copyB = b;
-        ll aBound = a-x;
-        ll bBound = b-y;
-
-        a -= min(aBound, n);
-        b -= min(n - min(aBound, n), bBound);
-
-        copyB -= min(bBound, n);
-        copyA -= min(n - min(bBound, n),aBound);
-
-        cout << min(copyA *copyB , a*b) << endl;
-
+        int n;
+        cin >> n;
+        int a[n];
+        for(int i=0; i<n; i++){
+            cin >> a[i];
+        }
+        vector<int> v1, v2, even, odd;
+        for(int i=0; i<n; i++){
+            if(a[i]%2) v1.pb(a[i]), odd.pb(a[i]);
+            else v2.pb(a[i]), even.pb(a[i]);
+        }
+        sv(v1);
+        sv(v2);
+        // odd and even both elements have to be sorted in given array
+        if(v1 == odd && v2 == even){
+            yes;
+        }else{
+            no;
+        }
     }
 
     oky_bye;

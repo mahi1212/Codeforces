@@ -19,20 +19,23 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        ll a, b, x, y, n;
-        cin >> a >> b >> x >> y >> n;
-        ll copyA = a;
-        ll copyB = b;
-        ll aBound = a-x;
-        ll bBound = b-y;
-
-        a -= min(aBound, n);
-        b -= min(n - min(aBound, n), bBound);
-
-        copyB -= min(bBound, n);
-        copyA -= min(n - min(bBound, n),aBound);
-
-        cout << min(copyA *copyB , a*b) << endl;
+        int n, k;
+        cin >> n >> k;
+        int a[n];
+        for(int i=0; i<n; i++){
+            cin >> a[i];
+        }
+        sa(a, n);
+        bool flag = false;
+        for(int i=0; i<n; i++){
+            int to_find = a[i]+k;
+            if(binary_search(a+i+1, a+n, to_find)){
+                yes;
+                flag = true;
+                break;
+            }
+        }
+        if(!flag) no;
 
     }
 

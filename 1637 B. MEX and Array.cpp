@@ -19,21 +19,20 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        ll a, b, x, y, n;
-        cin >> a >> b >> x >> y >> n;
-        ll copyA = a;
-        ll copyB = b;
-        ll aBound = a-x;
-        ll bBound = b-y;
-
-        a -= min(aBound, n);
-        b -= min(n - min(aBound, n), bBound);
-
-        copyB -= min(bBound, n);
-        copyA -= min(n - min(bBound, n),aBound);
-
-        cout << min(copyA *copyB , a*b) << endl;
-
+        int n;
+        cin >> n;
+        int a[n];
+        int ans = 0;
+        for(int i=0; i<n; i++) cin >> a[i];
+        for(int i=0; i<n; i++){
+            for(int j=i; j<n; j++){
+                ans += (j-i+1);
+                for(int k=i; k<=j; k++){
+                    if(a[k]==0) ans++;
+                }
+            }
+        }
+        cout << ans << endl;
     }
 
     oky_bye;

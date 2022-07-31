@@ -19,20 +19,31 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        ll a, b, x, y, n;
-        cin >> a >> b >> x >> y >> n;
-        ll copyA = a;
-        ll copyB = b;
-        ll aBound = a-x;
-        ll bBound = b-y;
-
-        a -= min(aBound, n);
-        b -= min(n - min(aBound, n), bBound);
-
-        copyB -= min(bBound, n);
-        copyA -= min(n - min(bBound, n),aBound);
-
-        cout << min(copyA *copyB , a*b) << endl;
+        int n, l, r;
+        cin >> n >> l >> r;
+        vector<int> v;
+        bool flag = false;
+        for(int i=1; i<=n; i++){
+            int k = l/i;
+            if(l%i != 0) k++;
+            if(i*k > r){
+                flag = true;
+                //no;
+                continue;
+            }
+            //cout << i << " " << k << endl;
+            int num = i*k;
+            v.pb(num);
+        }
+        if(flag){
+            no;
+        }else{
+            yes;
+            for(int i=0; i<n; i++){
+                cout << v[i] << " ";
+            }
+            newline;
+        }
 
     }
 
