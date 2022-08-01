@@ -16,17 +16,21 @@ using namespace std;
 int main(){
     Bismillah();
 
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while(n>9){
-        cnt++; n++;
-        while(n%10==0){
-            n=n/10;
+    int n, x, y;
+    string arr;
+
+    cin >> n >> x >> y >> arr;
+    reverse(arr.begin(), arr.end());
+
+    int ans = 0;
+    for(int i=0; i<x; i++){
+        if(i==y){
+            ans += (arr[i] == '0');
+        }else{
+            ans += (arr[i] == '1');
         }
-        //cout << n << " ";
     }
-    cnt+=9;
-    cout << cnt << endl;
+    cout << ans << endl;
+
     oky_bye;
 }

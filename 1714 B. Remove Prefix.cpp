@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -16,17 +17,28 @@ using namespace std;
 int main(){
     Bismillah();
 
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while(n>9){
-        cnt++; n++;
-        while(n%10==0){
-            n=n/10;
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        set<int> s;
+        for(int i=0; i<n; i++){
+            cin >> v[i];
         }
-        //cout << n << " ";
+        reverse(v.begin(), v.end());
+        int res = 0;
+        for(int i = 0; i < n; i++){
+            if(s.find(v[i]) == s.end()){
+                s.insert(v[i]);
+            }else{
+                break;
+            }
+            res++;
+        }
+        cout << n - res << endl;
     }
-    cnt+=9;
-    cout << cnt << endl;
+
     oky_bye;
 }

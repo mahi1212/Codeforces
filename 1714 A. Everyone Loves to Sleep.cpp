@@ -16,17 +16,29 @@ using namespace std;
 int main(){
     Bismillah();
 
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while(n>9){
-        cnt++; n++;
-        while(n%10==0){
-            n=n/10;
+    int t;
+    cin >> t;
+    while(t--){
+        int n, h, m;
+        cin >> n >> h >> m;
+        bool flag = false;
+        vector<int> hours, mins;
+        while(n--){
+            int x, y;
+            cin >> x >> y;
+            hours.pb(x);
+            mins.pb(y);
+            if(x == h){
+                flag = true;
+            }
         }
-        //cout << n << " ";
+        if(flag){
+            cout << 0 << " ";
+        }else{
+            int diff = (h - *min_element(hours.begin(), hours.end()));
+
+        }
     }
-    cnt+=9;
-    cout << cnt << endl;
+
     oky_bye;
 }

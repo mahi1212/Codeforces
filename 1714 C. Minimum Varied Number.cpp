@@ -16,17 +16,23 @@ using namespace std;
 int main(){
     Bismillah();
 
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while(n>9){
-        cnt++; n++;
-        while(n%10==0){
-            n=n/10;
+    int t;
+    cin >> t;
+    while(t--){
+        int n, num = 9;
+        cin >> n;
+        string str;
+        while(n>0){
+            while(num > n){
+                num--;
+            }
+            str += char('0'+num);
+            n -= num;
+            num--;
         }
-        //cout << n << " ";
+        reverse(str.begin(), str.end());
+        cout << str << endl;
     }
-    cnt+=9;
-    cout << cnt << endl;
+
     oky_bye;
 }

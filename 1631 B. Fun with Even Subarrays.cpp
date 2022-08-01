@@ -16,17 +16,29 @@ using namespace std;
 int main(){
     Bismillah();
 
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while(n>9){
-        cnt++; n++;
-        while(n%10==0){
-            n=n/10;
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int a[n];
+        for(int i=0; i<n; i++){
+            cin >> a[i];
         }
-        //cout << n << " ";
+        int cnt = 0, step = 0, x = a[n-1], i= n-1;
+        while(i>=0){
+            while(a[i]==x && i>=0){
+                cnt++, i--;
+            }
+            if(i<0){
+                break;
+            }
+            step++;
+            i -= cnt;
+            cnt *= 2;
+        }
+        cout << step << endl;
     }
-    cnt+=9;
-    cout << cnt << endl;
+
     oky_bye;
 }
