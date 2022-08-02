@@ -16,21 +16,20 @@ using namespace std;
 int main(){
     Bismillah();
 
-    int t;
-    cin >> t;
-    while(t--){
-        int n, H, M;
-        cin >> n >> H >> M;
-        map<int, int> mp;
-        for(int i=0; i<n; i++){
-            int h, m;
-            cin >> h >> m;
-            mp[h*60 + m]++;
+    int a[5];
+    int sum = 0;
+    for(int i=0; i<5; i++){
+        cin >> a[i];
+        sum += a[i];
+    }
+    if(sum == 0){
+        cout << -1 << endl;
+    }else{
+        if(sum % 5 == 0){
+            cout << sum / 5 << endl;
+        }else{
+            cout << -1 << endl;
         }
-        int t = 0;
-        while(!mp[(H*60+ M + t)% (24*60)]) t++;
-        t %= 24*60;
-        cout << t/60 << " " << t%60 << endl;
     }
 
     oky_bye;

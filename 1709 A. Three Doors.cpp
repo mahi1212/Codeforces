@@ -19,18 +19,18 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n, H, M;
-        cin >> n >> H >> M;
-        map<int, int> mp;
-        for(int i=0; i<n; i++){
-            int h, m;
-            cin >> h >> m;
-            mp[h*60 + m]++;
-        }
-        int t = 0;
-        while(!mp[(H*60+ M + t)% (24*60)]) t++;
-        t %= 24*60;
-        cout << t/60 << " " << t%60 << endl;
+        int x, a, b, c;
+        cin >> x;
+        cin >> a >> b >> c;
+        vector<int> v{a, b, c};
+        int cnt = 0;
+        int key = v[x-1];
+        if(key != 0) cnt++, key = v[key-1];
+        if(key != 0) cnt++, key = v[key-1];
+        if(key != 0) cnt++, key = v[key-1];
+
+        if(cnt == 2) yes;
+        else no;
     }
 
     oky_bye;

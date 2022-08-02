@@ -19,18 +19,21 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n, H, M;
-        cin >> n >> H >> M;
+        int n;
+        cin >> n;
+        int a[n];
+        for(int i=0; i<n; i++){
+            cin >> a[i];
+        }
+        int ans = -1;
         map<int, int> mp;
         for(int i=0; i<n; i++){
-            int h, m;
-            cin >> h >> m;
-            mp[h*60 + m]++;
+            if(mp.count(a[i])){
+                ans = max(ans, mp[a[i]]+n-i);
+            }
+            mp[a[i]] = i;
         }
-        int t = 0;
-        while(!mp[(H*60+ M + t)% (24*60)]) t++;
-        t %= 24*60;
-        cout << t/60 << " " << t%60 << endl;
+        cout << ans << endl;
     }
 
     oky_bye;

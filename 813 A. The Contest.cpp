@@ -13,25 +13,43 @@ using namespace std;
 #define Bismillah()         ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
 #define oky_bye             return 0
 
-int main(){
+int main()
+{
     Bismillah();
 
-    int t;
-    cin >> t;
-    while(t--){
-        int n, H, M;
-        cin >> n >> H >> M;
-        map<int, int> mp;
-        for(int i=0; i<n; i++){
-            int h, m;
-            cin >> h >> m;
-            mp[h*60 + m]++;
-        }
-        int t = 0;
-        while(!mp[(H*60+ M + t)% (24*60)]) t++;
-        t %= 24*60;
-        cout << t/60 << " " << t%60 << endl;
+    int n;
+    cin >> n;
+    int a[n];
+    int sum = 0;
+    for(int i=0; i<n; i++)
+    {
+        cin >> a[i];
+        sum += a[i];
+    }
+    int m;
+    cin >> m;
+    pair<int, int> p[1000];
+    for(int i=0; i<m; i++)
+    {
+        cin >> p[i].first >> p[i].second;
     }
 
+    for(int i=0; i<m; i++)
+    {
+        if(p[i].first <= sum && sum <= p[i].second)
+        {
+            cout << sum << endl;
+            oky_bye;
+        }
+    }
+    for(int i=0; i<m; i++)
+    {
+        if(sum < p[i].first)
+        {
+            cout << p[i].first << endl;
+            oky_bye;
+        }
+    }
+    cout << -1 << endl;
     oky_bye;
 }
